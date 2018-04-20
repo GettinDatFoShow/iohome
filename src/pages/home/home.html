@@ -1,0 +1,33 @@
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title>IoHome</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <img [src]="garageState"/>
+    <ion-card-content>
+      <ion-card-title>
+        Garage
+        </ion-card-title>
+        <button ion-item>
+            <ion-icon name="arrow-dropup" item-start large></ion-icon>
+            <h2>Open</h2>
+            <p>previous information...</p>
+        </button>
+      
+        <button ion-item>
+          <ion-icon name="arrow-dropdown" item-left large ></ion-icon>
+          <h2>Close</h2>
+          <p>previous information...</p>
+        </button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
