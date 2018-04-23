@@ -1,0 +1,13 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>IoHome - Edit Profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <img src="assets/imgs/avatars/avatar_general_256_2.png" alt="Profile Avatar">
+  <app-edit-profile-form (saveProfileResult)="saveProfileResult($event)" > </app-edit-profile-form>
+</ion-content>

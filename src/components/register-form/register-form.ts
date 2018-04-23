@@ -22,7 +22,7 @@ export class RegisterFormComponent {
 
   async register() {
     try {
-      const loginResponse: LoginResponse = await this.auth.signInWithEmailAndPassword(this.account) 
+      const loginResponse: LoginResponse = await this.auth.createUserWithEmailAndPassword(this.account) 
       this.registerStatus.emit(loginResponse);
     } catch(e) {
       this.registerStatus.emit(e);

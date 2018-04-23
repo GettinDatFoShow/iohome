@@ -4,8 +4,8 @@ export interface Profile {
     firstName?: string;
     lastName?: string;
     email: string;
-    avatar: string;
-    dob?: Date;
+    avatar?: string;
+    dateOfBirth?: Date;
     history?: History[];
 }
 
@@ -13,8 +13,8 @@ export class Profile {
     firstName?: string;
     lastName?: string;
     email: string;
-    avatar: string;
-    dob?: Date;
+    avatar?: string;
+    dateOfBirth?: Date;
     history?: History[];
 
     constructor(){};
