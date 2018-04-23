@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>Rooms</ion-title>
   </ion-navbar>
 
@@ -15,4 +15,19 @@
 
 <ion-content padding>
 
+  <ion-list >
+    <ion-list-header>
+      Your Rooms
+    </ion-list-header>
+    <ion-card *ngFor="let room of rooms">
+      <ion-item>
+          <ion-avatar item-start>
+            <img [src]="room.img" alt="Room Image">
+          </ion-avatar>
+          <h2>{{room.name}}</h2>
+          <p>{{room.description}}</p>
+      </ion-item>
+    </ion-card>
+
+  </ion-list>
 </ion-content>

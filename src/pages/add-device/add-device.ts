@@ -1,12 +1,6 @@
+import { Device } from './../../models/device/device.interface';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the AddDevicePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,11 +9,25 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AddDevicePage {
 
+  device: Device = new Device();
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddDevicePage');
+  }
+
+  addImage() {
+
+  }
+
+  addCommand() {
+
+  }
+
+  createDevice() {
+
   }
 
 }

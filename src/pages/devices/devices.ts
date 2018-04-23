@@ -1,12 +1,7 @@
+import { Device } from './../../models/device/device.interface';
+import { DEVICE_LIST, DEVICE_LIST_2 } from './../../mocks/device/device.mocks';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the DevicesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -14,6 +9,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'devices.html',
 })
 export class DevicesPage {
+
+  devices: Device[] = DEVICE_LIST.concat(DEVICE_LIST_2);
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

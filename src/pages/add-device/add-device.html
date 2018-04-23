@@ -7,7 +7,10 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>AddDevice</ion-title>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Add a Device</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,4 +18,117 @@
 
 <ion-content padding>
 
+  <ion-card>
+    
+    <ion-card-content>
+      
+
+      <ion-item>
+        <ion-label floating>
+          Device Name
+        </ion-label>
+        
+        <ion-input type="text" placeholder="Garage Door">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          Link/Url
+        </ion-label>
+        
+        <ion-input type="text" placeholder="http://?.?.?.?">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>
+            Port
+          </ion-label>
+          
+          <ion-input type="number" placeholder="9100">
+          </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          Description
+        </ion-label>
+        
+        <ion-input type="text" placeholder="Some description about the device could go here.">
+        </ion-input>
+      </ion-item>
+
+      <ion-row float-right>
+        <button ion-button (click)="addCommand()" icon-left>
+          <ion-icon name="add"></ion-icon> Command
+        </button>
+      </ion-row>
+
+      <ion-row float-right>
+        <button ion-button (click)="addImage()" icon-left>
+          <ion-icon name="add"></ion-icon> Image
+        </button>
+      </ion-row>
+
+    </ion-card-content>
+    
+    <ion-row padding="10px" float-right>
+      <button ion-button (click)="createDevice()">Create</button>
+    </ion-row>
+
+  </ion-card>
+
+  <ion-card>
+    <ion-card-title> 
+      Details
+    </ion-card-title>
+
+    <ion-card-header>
+      Commands
+    </ion-card-header>
+
+    <ion-card-content *ngFor="let command of device.commands">
+      <ion-item>
+        <ion-label>{{command.name}}</ion-label>
+        <ion-label>Description : {{command.description}}</ion-label>
+      </ion-item>
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-card>
+      <ion-card-title> 
+        Commands
+      </ion-card-title>
+      
+      <ion-card-content *ngFor="let command of device.commands">
+        <ion-item>
+          <ion-label>Command : {{command.name}}</ion-label>
+          <ion-label>Description : {{command.description}}</ion-label>
+        </ion-item>
+      </ion-card-content>
+  
+    </ion-card>
+
+    <ion-card>
+        <ion-card-title> 
+          Images
+        </ion-card-title>
+        
+        <ion-card-content *ngFor="let image of device.images">
+          <ion-item>
+            {{image}}
+          </ion-item>
+        </ion-card-content>
+    
+      </ion-card>
+
 </ion-content>
+
+<!-- link?: string; -->
+<!-- name: string; -->
+<!-- images?: string[]; -->
+<!-- state?: boolean; -->
+<!-- commands?: Command[]; -->
+<!-- history?: History[]; -->

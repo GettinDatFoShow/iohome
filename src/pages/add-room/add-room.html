@@ -7,6 +7,9 @@
 <ion-header>
 
   <ion-navbar>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>AddRoom</ion-title>
   </ion-navbar>
 
@@ -15,4 +18,50 @@
 
 <ion-content padding>
 
+  <ion-card>
+    
+    <ion-card-content>
+
+    <ion-item>
+      <ion-label floating>
+        Room Name
+      </ion-label>
+      <ion-input type="text" placeholder="Garage">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        Description
+      </ion-label>
+      <ion-input type="text" placeholder="Some description about the room could go here.">
+      </ion-input>
+    </ion-item>
+
+    <ion-row float-right>
+      <button ion-button (click)="addDevice()" icon-left>
+        <ion-icon name="add"></ion-icon> Device
+      </button>
+    </ion-row>
+
+    <ion-row float-right>
+      <button ion-button (click)="addImage()" icon-left>
+        <ion-icon name="add"></ion-icon> Image
+      </button>
+    </ion-row>
+
+    </ion-card-content>
+    
+    <ion-row padding="10px" float-right>
+      <button ion-button (click)="createRoom()">Create</button>
+    </ion-row>
+
+  </ion-card>
+
 </ion-content>
+
+<!-- name: string;
+registered: Date;
+devices?: Device[];
+history?: History[];
+images?: string[]; -->

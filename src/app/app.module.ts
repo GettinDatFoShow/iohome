@@ -7,9 +7,8 @@ import { MyApp } from './app.component';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+import { AuthService } from '../providers/auth/auth.service';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-
 
 @NgModule({
   declarations: [
@@ -30,7 +29,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthServiceProvider
+    AuthService
   ]
 })
 export class AppModule {}

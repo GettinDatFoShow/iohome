@@ -1,12 +1,7 @@
+import { ROOM_LIST } from './../../mocks/room/room.mocks';
+import { Room } from './../../models/room/room.interface';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the RoomsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -14,6 +9,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'rooms.html',
 })
 export class RoomsPage {
+
+  rooms: Room[] = ROOM_LIST;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
