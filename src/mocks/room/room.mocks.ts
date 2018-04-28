@@ -13,7 +13,7 @@ const roomList: Room[] = [
         registered: new Date(),
         devices: deviceList,
         history: roomHistory,
-        img: '../assets/imgs/room256.png',
+        img: 'assets/imgs/room256.png',
     },
     { 
         name: 'Living Room', 
@@ -21,7 +21,7 @@ const roomList: Room[] = [
         registered: new Date(),
         devices: [],
         history: roomHistory,
-        img: '../assets/imgs/room256.png',
+        img: 'assets/imgs/room256.png',
     },
     { 
         name: 'Kitchen', 
@@ -29,7 +29,7 @@ const roomList: Room[] = [
         registered: new Date(),
         devices: [],
         history: roomHistory,
-        img: '../assets/imgs/room256.png',
+        img: 'assets/imgs/room256.png',
     }
 ]
 

@@ -2,13 +2,6 @@ import { Room } from './../../models/room/room.interface';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the AddRoomPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-add-room',
@@ -16,25 +9,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AddRoomPage {
 
-  room: Room = new Room();
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AddRoomPage');
-  }
-
-  addDevice() {
-
-  }
-
-  addImage() {
-
-  }
-
-  createRoom() {
-
   }
 
 }

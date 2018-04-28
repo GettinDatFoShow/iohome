@@ -14,3 +14,52 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+
+.global__img-shadow {
+    margin: 0 auto;
+    display: block;
+    -webkit-filter: drop-shadow(3px 3px 3px rgba(34, 34, 34, 0.548) );
+    filter: drop-shadow(3px 3px 3px rgba(34, 34, 34, 0.548));
+}
+
+.global__avatar-shadow {
+    -webkit-filter: drop-shadow(3px 3px 3px rgba(34, 34, 34, 0.548) );
+    filter: drop-shadow(3px 3px 3px rgba(34, 34, 34, 0.548));
+}
+
+.global__form-input-error {
+    color: rgb(238, 50, 25);
+}
+
+.text-dark {
+    color: map-get($colors, dark)
+}
+
+.text-dark {
+    color: map-get($colors, dark)
+}
+
+.text-secondary {
+    color: map-get($colors, secondary)
+}
+
+.text-secondary {
+    color: map-get($colors, secondary)
+}
+
+p.text-secondary {
+    color: map-get($colors, secondary)
+}
+
+p.text-light {
+    color: map-get($colors, light)
+}
+
+.text-bright {
+    color: map-get($colors, bright)
+}
+
+.text-primary {
+    color: map-get($colors, primary)
+}

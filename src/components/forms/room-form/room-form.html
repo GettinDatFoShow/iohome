@@ -1,0 +1,31 @@
+<ion-card>
+    
+        <ion-card-content>
+          <ion-card-header>
+            <ion-card-title color="primary">
+              New Room Details
+            </ion-card-title>
+          </ion-card-header>
+        <ion-item>
+          <ion-label stacked color="secondary">
+            Room Name
+          </ion-label>
+          <ion-input type="text" placeholder="Garage">
+          </ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label stacked color="secondary">
+            Description
+          </ion-label>
+          <ion-input type="text" placeholder="Some description about the room could go here.">
+          </ion-input>
+        </ion-item>
+    
+        </ion-card-content>
+        
+        <ion-row padding="10px" float-right>
+          <button ion-button color="bright" (click)="createRoom()">Create</button>
+        </ion-row>
+    
+      </ion-card>

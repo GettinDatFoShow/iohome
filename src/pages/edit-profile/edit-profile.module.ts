@@ -1,4 +1,4 @@
-import { ComponentsModule } from './../../components/components.module';
+import { ComponentsFormModule } from './../../components/component-forms.module';
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { EditProfilePage } from './edit-profile';
@@ -9,7 +9,7 @@ import { EditProfilePage } from './edit-profile';
   ],
   imports: [
     IonicPageModule.forChild(EditProfilePage),
-    ComponentsModule
+    ComponentsFormModule
   ],
 })
 export class EditProfilePageModule {}

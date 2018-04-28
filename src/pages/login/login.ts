@@ -22,7 +22,7 @@ export class LoginPage {
     if(!event.error) {
       this.toast.create({
         message: `Wecome to IoHome, ${event.result.email}`,
-        duration: 3000
+        duration: 2500
       }).present();
 
       this.data.getProfile(<User>event.result).subscribe(profile => {
@@ -33,7 +33,7 @@ export class LoginPage {
     } else{
       this.toast.create({
         message: `Uh Oh! ${event.error.message}`,
-        duration: 3000
+        duration: 2500
       }).present();
     }
   }

@@ -1,3 +1,4 @@
+import { Room } from './../../../models/room/room.interface';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,7 +7,21 @@ import { Component } from '@angular/core';
 })
 export class RoomFormComponent {
 
+  room: Room;  
+
   constructor() {
+    this.room = new Room();
+  }
+
+  addDevice() {
+
+  }
+
+  addImage() {
+
+  }
+
+  createRoom() {
 
   }
 

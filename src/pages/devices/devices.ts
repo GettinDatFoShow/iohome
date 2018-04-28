@@ -1,6 +1,6 @@
 import { Device } from './../../models/device/device.interface';
 import { DEVICE_LIST, DEVICE_LIST_2 } from './../../mocks/device/device.mocks';
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
@@ -10,13 +10,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class DevicesPage {
 
-  devices: Device[] = DEVICE_LIST.concat(DEVICE_LIST_2);
 
+  @Output() devices: Device[] = DEVICE_LIST.concat(DEVICE_LIST_2); // for testing purposes: implement data service call for user device list
+  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DevicesPage');
+  navigateToPage(page: string) {
+    this.navCtrl.push(page);
   }
-
+  
 }

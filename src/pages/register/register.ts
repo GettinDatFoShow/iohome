@@ -19,6 +19,7 @@ export class RegisterPage {
         message: `Account created: ${event.result.email}`,
         duration: 3000
       }).present();
+      this.navCtrl.setRoot('TabsPage');
     } else {
       this.toast.create({
         message: `Account not created: ${event.error.message}`,

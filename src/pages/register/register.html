@@ -4,7 +4,7 @@
     <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>IoHome - New User</ion-title>
+    <ion-title>IoHome</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -12,8 +12,7 @@
 
 <ion-content padding>
 
-  <img src="assets/imgs/register256.png" alt="logo" >
-
+  <img class="global__img-shadow" src="assets/imgs/register256.png" alt="logo" >
   <app-register-form (registerStatus)="register($event)"></app-register-form>
 
 </ion-content>

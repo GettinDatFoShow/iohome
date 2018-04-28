@@ -6,22 +6,16 @@
 
 </ion-header>
 
-
 <ion-content padding>
-
+  <ion-fab top right edge>
+      <button ion-fab mini color="bright"><ion-icon name="share"></ion-icon></button>
+      <ion-fab-list  color="bight">
+        <button ion-fab color="facebook"><ion-icon  name="logo-facebook"></ion-icon></button>
+        <button ion-fab color="twitter"><ion-icon  name="logo-twitter"></ion-icon></button>
+        <button ion-fab><ion-icon  name="logo-github"></ion-icon></button>
+        <button ion-fab><ion-icon  name="logo-googleplus"></ion-icon></button>
+      </ion-fab-list>
+    </ion-fab>
   <!-- Home is to display most recently used devices -->
-    <ion-list >
-        <ion-list-header>
-          Recently Used Devices
-        </ion-list-header>
-        <ion-card *ngFor="let device of recentDevices">
-          <ion-item>
-              <ion-avatar item-start>
-                <img *ngIf="device.img" [src]="device.img" alt="Device Image">
-              </ion-avatar>
-              <h2>{{device.name}}</h2>
-              <p>{{device.history[0].action}}</p>
-          </ion-item>
-        </ion-card>
-    </ion-list>
+  <app-device-list *ngIf="deviceList" [listTitle]="'Recent Devices'" [deviceList]="deviceList"></app-device-list>
 </ion-content>

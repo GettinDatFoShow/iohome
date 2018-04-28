@@ -1,6 +1,6 @@
 import { ROOM_LIST } from './../../mocks/room/room.mocks';
 import { Room } from './../../models/room/room.interface';
-import { Component } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
@@ -8,15 +8,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-rooms',
   templateUrl: 'rooms.html',
 })
-export class RoomsPage {
+export class RoomsPage implements OnInit {
 
-  rooms: Room[] = ROOM_LIST;
+  @Output() rooms: Room[] = ROOM_LIST;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad RoomsPage');
+  ngOnInit() {
+    // add future services to load room list here.
+  }
+
+  navigateToPage(page: string) {
+    this.navCtrl.push(page);
   }
 
 }

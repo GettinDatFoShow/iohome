@@ -29,6 +29,7 @@ plugins/android.json
 plugins/ios.json
 www/
 $RECYCLE.BIN/
+/home/gettindatfoshow/code/learning/IoHome/src/app/app.properties.ts
 
 .DS_Store
 Thumbs.db

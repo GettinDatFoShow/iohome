@@ -1,3 +1,4 @@
+import { Device } from './../../../models/device/device.interface';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,7 +7,21 @@ import { Component } from '@angular/core';
 })
 export class DeviceFormComponent {
 
+  device: Device;
+
   constructor() {
+    this.device = new Device();
+  }
+
+  addImage() {
+
+  }
+
+  addCommand() {
+
+  }
+
+  createDevice() {
 
   }
 

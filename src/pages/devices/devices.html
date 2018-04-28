@@ -15,20 +15,10 @@
 
 <ion-content padding>
 
-  <ion-list >
-    <ion-list-header>
-      Your Register Devices
-    </ion-list-header>
-    <ion-card *ngFor="let device of devices">
-        <ion-item>
-            <ion-avatar item-start>
-              <img [src]="device.img" alt="Device Image">
-            </ion-avatar>
-            <h2>{{device.name}}</h2>
-            <p *ngIf="device.description">{{device.description}}</p>
-        </ion-item>
-      </ion-card>
+    <ion-fab top right edge>
+        <button ion-fab mini color="bright" (click)="navigateToPage('AddDevicePage')"><ion-icon name="add"></ion-icon></button>
+    </ion-fab>
 
-  </ion-list>
+<app-device-list *ngIf="devices" [listTitle]="'Registered Devices'" [deviceList]="devices"></app-device-list>
 
 </ion-content>

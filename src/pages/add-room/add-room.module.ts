@@ -1,3 +1,4 @@
+import { ComponentsFormModule } from './../../components/component-forms.module';
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { AddRoomPage } from './add-room';
@@ -8,6 +9,7 @@ import { AddRoomPage } from './add-room';
   ],
   imports: [
     IonicPageModule.forChild(AddRoomPage),
+    ComponentsFormModule
   ],
 })
 export class AddRoomPageModule {}

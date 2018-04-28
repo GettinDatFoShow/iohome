@@ -1,3 +1,4 @@
+import { ComponentsFormModule } from './../../components/component-forms.module';
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { AddDevicePage } from './add-device';
@@ -8,6 +9,7 @@ import { AddDevicePage } from './add-device';
   ],
   imports: [
     IonicPageModule.forChild(AddDevicePage),
+    ComponentsFormModule
   ],
 })
 export class AddDevicePageModule {}
