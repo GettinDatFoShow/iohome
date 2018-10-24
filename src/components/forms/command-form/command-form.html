@@ -1,0 +1,55 @@
+<form #commandForm="ngForm">
+
+    <ion-card-content>
+      <ion-card-header>
+        <ion-card-title color="primary">
+          Add New Command
+        </ion-card-title>
+      </ion-card-header>
+      <ion-item>
+        <ion-label  color="primary" stacked>
+          Command Name
+        </ion-label>
+        <ion-input
+          name="name"
+          #name="ngModel"
+          [(ngModel)]="command.name" type="text" placeholder="Open or Close">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>
+          Description
+        </ion-label>
+        <ion-input 
+          name="description"
+          #description="ngModel"
+          [(ngModel)]="command.description" type="text" placeholder="Opens garage door..">
+        </ion-input>
+      </ion-item>
+
+      <ion-list radio-group name="typeOfRequest"
+        #typeOfRequest="ngModel"
+        [(ngModel)]="command.typeOfRequest" type="number" >
+        <ion-list-header color="primary">
+          Type Of Request
+        </ion-list-header>
+
+          <ion-item>
+            <ion-label>Get</ion-label>
+            <ion-radio value="GET"></ion-radio>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label>Post</ion-label>
+            <ion-radio value="POST"></ion-radio>
+          </ion-item>
+        </ion-list>
+    
+    </ion-card-content>
+
+    <ion-row padding="10px" float-right>
+        <button ion-button color="bright" (click)="save()">Save</button>
+    </ion-row>
+
+</form>

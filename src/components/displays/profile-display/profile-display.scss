@@ -1,3 +1,15 @@
-profile-display {
+app-profile-display {
+    .profile-display__image-container {
+        // background-color: map-get($colors, sercondary);
+        background-color: #82D0D8;
+        height: 220px;
+    }
 
+    .profile-display__image {
+        padding-top: 20px;
+        height: 200px;
+        max-height: 200px;
+        margin: 0 auto;
+        display: block;
+    }
 }

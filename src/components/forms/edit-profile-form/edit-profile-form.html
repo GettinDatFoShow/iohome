@@ -1,37 +1,50 @@
-<ion-card>
-  <ion-card-content>
-    <ion-item>
-      <ion-label floating>
-        First Name
-      </ion-label>
-      <ion-input [(ngModel)]="profile.firstName" type="text">
-      </ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label floating>
-        Last Name
-      </ion-label>
-      <ion-input [(ngModel)]="profile.lastName" type="text">
-      </ion-input>
-    </ion-item>
-    <ion-item>
+<form #editProfileForm="ngForm">
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
         <ion-label floating>
-          Date of Birth
+          First Name
         </ion-label>
-        <ion-datetime [(ngModel)]="profile.dateOfBirth" 
-        displayFormat="MM/DD/YYYY">
-        </ion-datetime>
-    </ion-item>
-    <ion-item>
-        <ion-label floating>
-          Avatar Link
-        </ion-label>
-        <ion-input [(ngModel)]="profile.avatar" type="text">
+        <ion-input
+          name="firstName"
+          #firstName="ngModel"
+          [(ngModel)]="profile.firstName" type="text">
         </ion-input>
-    </ion-item>
-  </ion-card-content>
-  <ion-row float-right padding>
-      <button ion-button (click)="saveProfile()">Save</button>
-  </ion-row>
-</ion-card>
-
+      </ion-item>
+      <ion-item>
+        <ion-label floating>
+          Last Name
+        </ion-label>
+        <ion-input
+          name="lastName"
+          #lastName="ngModel"
+          [(ngModel)]="profile.lastName" type="text">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label floating>
+            Date of Birth
+          </ion-label>
+          <ion-datetime
+            name="dateOfBirth"
+            #dateOfBirth="ngModel"
+            [(ngModel)]="profile.dateOfBirth" 
+          displayFormat="MM/DD/YYYY">
+          </ion-datetime>
+      </ion-item>
+      <ion-item>
+          <ion-label floating>
+            Avatar Link
+          </ion-label>
+          <ion-input 
+            name="avatar"
+            #avatar="ngModel"
+            [(ngModel)]="profile.avatar" type="text">
+          </ion-input>
+      </ion-item>
+    </ion-card-content>
+    <ion-row float-right padding>
+        <button ion-button color="bright" (click)="saveProfile()">Save</button>
+    </ion-row>
+  </ion-card>
+</form> 

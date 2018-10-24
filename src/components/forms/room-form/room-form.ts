@@ -1,5 +1,6 @@
 import { Room } from './../../../models/room/room.interface';
 import { Component } from '@angular/core';
+import { Loading, LoadingController } from 'ionic-angular';
 
 @Component({
   selector: 'app-room-form',
@@ -8,8 +9,11 @@ import { Component } from '@angular/core';
 export class RoomFormComponent {
 
   room: Room;  
+  private loader: Loading;
 
-  constructor() {
+  constructor(
+    private loading: LoadingController
+  ) {
     this.room = new Room();
   }
 
@@ -21,8 +25,20 @@ export class RoomFormComponent {
 
   }
 
-  createRoom() {
+  async createRoom() {
 
+  }
+
+  private presentLoader(message: string) {
+    this.loader = this.loading.create({
+      content: `${message}`,
+      spinner: 'bubbles'
+    });
+    this.loader.present();
+  }  
+
+  private dismissLoader() {
+    this.loader.dismiss();
   }
 
 }

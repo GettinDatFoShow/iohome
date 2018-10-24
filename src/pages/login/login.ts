@@ -15,8 +15,7 @@ export class LoginPage {
      private toast: ToastController,
      private data: DataService,
      private navParams: NavParams
-    ) {
-  }
+    ) { }
 
   login(event: LoginResponse) {
     if(!event.error) {
@@ -26,10 +25,8 @@ export class LoginPage {
       }).present();
 
       this.data.getProfile(<User>event.result).subscribe(profile => {
-        console.log(profile);
         profile ? this.navCtrl.setRoot('TabsPage') : this.navCtrl.setRoot('EditProfilePage');
       })
-
     } else{
       this.toast.create({
         message: `Uh Oh! ${event.error.message}`,

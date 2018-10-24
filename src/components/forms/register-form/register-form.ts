@@ -22,22 +22,26 @@ export class RegisterFormComponent {
     this.registerStatus = new EventEmitter<LoginResponse>();
   }
 
-  presentLoader() {
-    this.loader = this.loading.create({
-      content: 'Logging in....',
-      spinner: 'bubbles'
-    });
-    this.loader.present();
-  }  
-
   async register() {
-    this.presentLoader();
+    this.presentLoader('Registering New User...');
     try {
       const loginResponse: LoginResponse = await this.auth.createUserWithEmailAndPassword(this.account) 
       this.registerStatus.emit(loginResponse);
     } catch(e) {
       this.registerStatus.emit(e);
     }
+    this.dismissLoader();
+  }
+
+  private presentLoader(message: string) {
+    this.loader = this.loading.create({
+      content: `${message}`,
+      spinner: 'bubbles'
+    });
+    this.loader.present();
+  }  
+
+  private dismissLoader() {
     this.loader.dismiss();
   }
 

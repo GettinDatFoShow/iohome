@@ -1,0 +1,38 @@
+<div class="profile-display__image-container">
+    <img class="profile-display__image" src="assets/imgs/avatars/avatar_general_256_3.png">    
+</div>
+
+<div>
+    <ion-card>
+        <ion-card-content>
+            <ion-item>
+                <ion-label color="primary" stacked>
+                    First Name
+                </ion-label>
+                <ion-input  [value]="userProfile.firstName" [readonly]></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label color="primary" stacked>
+                    Last Name
+                </ion-label>
+                <ion-input [value]="userProfile.lastName" [readonly]></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label color="primary" stacked>
+                    Email
+                </ion-label>
+                <ion-input [value]="userProfile.email" [readonly]></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label color="primary" stacked>
+                    Date Of Birth
+                </ion-label>
+                <ion-input [value]="userProfile.dateOfBirth" [readonly]></ion-input>
+            </ion-item>
+        </ion-card-content>
+        <ion-row float-right padding>
+            <button ion-button color="light" (click)=signOut()>Logout</button>
+            <button ion-button margin-left="10px" color="light" (click)=editProfile() ><ion-icon name="edit"></ion-icon>  Edit  </button>
+        </ion-row>
+    </ion-card>
+</div>

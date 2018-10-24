@@ -13,6 +13,7 @@ export interface Device {
     history?: History[];
     type?: string;
     location?: string;
+    avatar?: string;
 }
 
 export class Device {
@@ -27,6 +28,7 @@ export class Device {
     history?: History[];
     type?: string;
     location?: string;
+    avatar?: string;
 
     constructor(){};
 }

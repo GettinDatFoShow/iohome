@@ -1,39 +1,56 @@
-<ion-card>
-    
+<form #deviceForm="ngForm">
+  <ion-card *ngIf="!addingCommand">
+      
     <ion-card-content>
       <ion-card-header>
-        <ion-card-title color="secondary">
+        <ion-card-title color="primary">
           New Device Details
         </ion-card-title>
       </ion-card-header>
       <ion-item>
-        <ion-label stacked color="secondary">
+        <ion-label  color="primary" stacked>
           Device Name
         </ion-label>
-        <ion-input [(ngModel)]="device.name" type="text" placeholder="Garage Door">
+        <ion-input
+          name="name"
+          #name="ngModel"
+          [(ngModel)]="device.name" type="text" placeholder="Garage Door">
         </ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label stacked color="secondary">
+        <ion-label color="primary" stacked>
           Link/Url
         </ion-label>
-        <ion-input [(ngModel)]="device.link" type="text" placeholder="http://?.?.?.?">
+        <ion-input 
+          name="link"
+          #link="ngModel"
+          [(ngModel)]="device.link" type="text" placeholder="http://?.?.?.?">
         </ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label stacked color="secondary">
+        <ion-label color="primary" stacked>
           Port
         </ion-label>
-        <ion-input [(ngModel)]="device.port" type="number" placeholder="9100">
+        <ion-input 
+          name="port"
+          #port="ngModel"
+          [(ngModel)]="device.port" type="number" placeholder="9100">
         </ion-input>
       </ion-item>
     
     </ion-card-content>
 
     <ion-row padding="10px" float-right>
-        <button ion-button color="bright" (click)="createDevice()">Create</button>
+        <button ion-button color="bright" (click)="createDevice()">Save</button>
+        <button ion-button color="bright" (click)="addCommand()">Add Command</button>
     </ion-row>
 
   </ion-card>
+
+  <ion-card *ngIf="addingCommand">
+    <command-form (saveCommand)="pushCommand($event)"></command-form>
+  </ion-card>
+
+</form>

@@ -23,23 +23,27 @@ export class LoginFormComponent {
     this.loginStatus = new EventEmitter<LoginResponse>();
   }
 
-  presentLoader() {
-    this.loader = this.loading.create({
-      content: 'Logging in....',
-      spinner: 'circles'
-    });
-    this.loader.present();
-  }  
-
   async login() {
-    this.presentLoader();
+    this.presentLoader('Logging in...');
     const loginResponse = await this.auth.signInWithEmailAndPassword(this.account) 
     this.loginStatus.emit(loginResponse);
-    this.loader.dismiss();
+    this.dismissLoader();
   }
 
   navigateToRegisterPage(): void {
     this.navCtrl.push('RegisterPage');
+  }
+
+  private presentLoader(message: string) {
+    this.loader = this.loading.create({
+      content: `${message}`,
+      spinner: 'bubbles'
+    });
+    this.loader.present();
+  }  
+
+  private dismissLoader() {
+    this.loader.dismiss();
   }
 
 }

@@ -1,6 +1,6 @@
 import { Device } from './../../models/device/device.interface';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -11,23 +11,19 @@ export class AddDevicePage {
 
   device: Device = new Device();
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    private navCtrl: NavController, 
+    private navParams: NavParams, 
+    private toast: ToastController 
+    ) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AddDevicePage');
-  }
-
-  addImage() {
-
-  }
-
-  addCommand() {
-
-  }
-
-  createDevice() {
-
+  savedDevice(event: Device) {
+    this.toast.create({
+      message: 'Device Saved!',
+      duration: 3000
+    }).present();
+    this.navCtrl.setRoot('TabsPage');
   }
 
 }
